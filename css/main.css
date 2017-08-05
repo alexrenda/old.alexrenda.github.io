@@ -4,7 +4,6 @@ html {
 }
 
 body {
-    background-image: url(../img/background.jpg);
     background-repeat: no-repeat;
     background-size: auto calc(100% + 160px);
     background-position: center;
