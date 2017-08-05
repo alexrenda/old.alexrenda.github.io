@@ -6,8 +6,10 @@ window.onload = function() {
     lowres_background_image.onload = function() {
         console.log("Loaded low res!");
         if (!highres_loaded) {
+            /*
             document.body.style.backgroundImage =
                 'url(' + lowres_background_image.src + ')';
+            */
         }
     };
     lowres_background_image.src = 'img/background_small.jpg';
@@ -16,8 +18,10 @@ window.onload = function() {
     highres_background_image.onload = function() {
         console.log("Loaded high res!");
         highres_loaded = true;
+        /*
         document.body.style.backgroundImage =
-            'url(' + lowres_background_image.src + ')';
+            'url(' + highres_background_image.src + ')';
+        */
     };
     highres_background_image.src = 'img/background.jpg';
 }
