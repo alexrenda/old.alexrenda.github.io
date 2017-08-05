@@ -1,31 +1,16 @@
 function onload() {
     let body = document.body;
-    let highres_loaded = false;
-
-    let lowres_background_image = new Image();
-    lowres_background_image.onload = function() {
-        console.log("Loaded low res!");
-        if (!highres_loaded) {
-            document.body.style.backgroundImage =
-                'url(' + lowres_background_image.src + ')';
-        }
-    };
-    lowres_background_image.src = 'img/background_small.jpg';
 
     let highres_background_image = new Image();
     highres_background_image.onload = function() {
-        console.log("Loaded high res!");
-        highres_loaded = true;
-        document.body.style.backgroundImage =
-            'url(' + highres_background_image.src + ')';
+        document.body.style.backgroundImage = 'url(' + highres_background_image.src + ')';
+        document.getElementsByClassName("background-small")[0].style.opacity = 0;
     };
     highres_background_image.src = 'img/background.jpg';
 }
 
 if (document.addEventListener) {
-    console.log("Has event listened");
     document.addEventListener("DOMContentLoaded", onload, false);
 } else {
-    console.log("onloading");
     window.onload = onload;
 }

@@ -12,26 +12,35 @@ body {
     font-family: Georgia;
 }
 
-.background-tint {
-    z-index: 1;
+.wrapper {
     height: 100%;
     width: 100%;
     position: fixed;
     overflow: auto;
     top: 0px;
     left: 0px;
-    background: rgba(0, 0, 0, 0.6);
+}
 
-    color: rgb(225, 225, 245);
+.background-small {
+    z-index: 0;
+
+    background-image: url(../img/background_small.jpg);
+    background-repeat: no-repeat;
+    background-size: auto calc(100% + 160px);
+    background-position: center;
+
+    transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+}
+
+.background-tint {
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .content {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    overflow: auto;
-    top: 0px;
-    left: 0px;
+    z-index: 100;
 
     padding: 0;
     margin: 0;
@@ -41,6 +50,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    color: rgb(225, 225, 245);
 }
 
 .container {
