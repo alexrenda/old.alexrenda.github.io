@@ -23,7 +23,9 @@ function onload() {
 }
 
 if (document.addEventListener) {
+    console.log("Has event listened");
     document.addEventListener("DOMContentLoaded", onload, false);
 } else {
+    console.log("onloading");
     window.onload = onload;
 }
